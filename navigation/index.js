@@ -6,7 +6,7 @@ import {} from 'react-native';
 import {PersistanceHelper} from '../helpers';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {EventRegister} from 'react-native-event-listeners';
-import {TestReduxScreen} from '../src/screens';
+import {TestReduxScreen, ListApiScreen} from '../src/screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,9 +15,15 @@ const Navigator = () => {
     return (
       <Stack.Group>
         <Stack.Screen
+          name="testApiScreen"
+          component={ListApiScreen}
+          options={{title: 'Test Api Component'}}
+        />
+
+        <Stack.Screen
           name="testReduxScreen"
           component={TestReduxScreen}
-          options={{title: 'Test Props Component'}}
+          options={{title: 'Test Redux Component'}}
         />
       </Stack.Group>
     );
