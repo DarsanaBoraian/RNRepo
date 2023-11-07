@@ -7,6 +7,7 @@ import {PersistanceHelper} from '../helpers';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {EventRegister} from 'react-native-event-listeners';
 import {TestReduxScreen, ListApiScreen} from '../src/screens';
+import TestReduxQuery from '../src/screens/TestReduxQuery';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,11 @@ const Navigator = () => {
   const getMainStack = () => {
     return (
       <Stack.Group>
+        <Stack.Screen
+          name="testReduxQueryScreen"
+          component={TestReduxQuery}
+          options={{title: 'Test redux query Component'}}
+        />
         <Stack.Screen
           name="testApiScreen"
           component={ListApiScreen}
